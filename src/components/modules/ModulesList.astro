@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const modules = [
+    { 
+        icon: 'mdi:video-vintage', 
+        title: 'Módulo 1: Alfabetización Visual', 
+        description: 'Domina la gramática del cine. Aprende cómo los Planos y Ángulos afectan la psicología de la imagen y enseña a tus alumnos a narrar con la cámara.' 
+    },
+    { 
+        icon: 'mdi:notebook-edit', 
+        title: 'Módulo 2: Del Libro al Guion', 
+        description: 'Transforma temas "aburridos" (curriculares) en guiones emocionantes. Aprende a usar el Storyboard para visualizar el aprendizaje antes de grabar.' 
+    },
+    { 
+        icon: 'mdi:cellphone-screenshot', 
+        title: 'Módulo 3: El Kit de Guerrilla', 
+        description: 'Técnicas de rodaje móvil. Aprende a estabilizar, iluminar y capturar audio de calidad usando solo tu Smartphone. Trucos profesionales a costo cero.' 
+    },
+    { 
+        icon: 'mdi:scissors-cutting', 
+        title: 'Módulo 4: Edición y Evaluación', 
+        description: 'Edición sencilla con Apps gratuitas y, lo más importante: Diseño de Rúbricas. Aprende a evaluar el proceso creativo y el trabajo en equipo, no solo el "video bonito".' 
+    },
+];
+---
+<section class="py-16 md:py-24 bg-white" id="modulos">
+    <div class="container mx-auto px-6 max-w-6xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-indigo-700">
+            ¿Qué Aprenderás?
+        </h2>
+        <p class="text-center text-xl mb-12 text-gray-600 italic">
+            El curso está dividido en cápsulas de alto impacto (Micro-learning):
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {modules.map((module) => (
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-orange-500 hover:shadow-xl transition duration-300">
+                    <div class="flex items-start">
+                        <Icon name={module.icon} class="w-10 h-10 text-orange-500 flex-shrink-0 mt-1 mr-4" />
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-indigo-800">{module.title}</h3>
+                            <p class="text-gray-700">{module.description}</p>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="mt-16 pt-12 border-t border-gray-200">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-6 text-indigo-700">
+                Tu Proyecto Final: El Valor Tangible
+            </h2>
+            <div class="bg-indigo-100 p-8 rounded-xl shadow-inner text-center">
+                <Icon name="mdi:file-document-edit" class="w-16 h-16 text-indigo-600 mx-auto mb-4" />
+                <h3 class="text-2xl font-bold text-indigo-800 mb-3">
+                    EL PLAN DE RODAJE PEDAGÓGICO 📄
+                </h3>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                    No es solo teoría. Saldrás de este taller con un producto listo para usar el lunes por la mañana: Una guía personalizada para aplicar un proyecto audiovisual en **TU asignatura específica**, con objetivos de aprendizaje claros y herramientas de evaluación listas.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
