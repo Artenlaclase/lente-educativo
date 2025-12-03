@@ -1,16 +1,64 @@
 ---
-
+import Layout from '../components/layout/Layout.astro';
+import HeaderHero from '../components/HeaderHero.astro';
+import ProblemSection from '../components/modules/ProblemSection.astro';
+import SolutionSection from '../components/modules/SolutionSection.astro';
+import ModulesList from '../components/modules/ModulesList.astro';
+import BonusSection from '../components/modules/BonusSection.astro';
+import FAQ from '../components/modules/FAQ.astro';
+import CTAButton from '../components/modules/CTAButton.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Lente Educativo: Taller Audiovisual para Docentes">
+    <HeaderHero />
+
+    <main>
+        <ProblemSection />
+
+        <SolutionSection />
+
+        <ModulesList />
+        
+        <section class="py-16 bg-white" id="target">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-10 text-indigo-700">
+                    ¿Para Quién Es Este Taller?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="p-6 border-2 border-indigo-200 rounded-lg bg-indigo-50">
+                        <p class="text-xl font-bold mb-2 text-indigo-800">✅ Docentes de Todas las Áreas</p>
+                        <p class="text-gray-600 text-sm">Historia, Ciencias, Lenguaje, Matemáticas, Artes.</p>
+                    </div>
+                    <div class="p-6 border-2 border-indigo-200 rounded-lg bg-indigo-50">
+                        <p class="text-xl font-bold mb-2 text-indigo-800">✅ Sin Experiencia Técnica</p>
+                        <p class="text-gray-600 text-sm">Si sabes tomar una foto con tu celular, estás calificado.</p>
+                    </div>
+                    <div class="p-6 border-2 border-indigo-200 rounded-lg bg-indigo-50">
+                        <p class="text-xl font-bold mb-2 text-indigo-800">✅ Profesores Innovadores</p>
+                        <p class="text-gray-600 text-sm">Que buscan motivar, colaborar y desarrollar la creatividad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <BonusSection />
+
+        <FAQ />
+    </main>
+
+    <footer class="py-16 md:py-24 bg-indigo-800 text-white text-center" id="footer">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                El mundo es audiovisual. <span class="text-orange-400">Tu clase también debería serlo.</span>
+            </h2>
+            <p class="text-xl mb-8">
+                Únete a la comunidad de docentes que están cambiando la educación, plano a plano.
+            </p>
+
+            <div class="mt-8 flex justify-center">
+                <CTAButton text="COMENZAR MI TRANSFORMACIÓN AHORA" isLarge={true} />
+            </div>
+            <p class="mt-4 text-sm font-light text-gray-300">Acceso Inmediato</p>
+        </div>
+    </footer>
+</Layout>
