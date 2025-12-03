@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const bonuses = [
+    { icon: 'mdi:drawing-box', title: 'Plantilla de Storyboard Imprimible', description: 'Para que tus alumnos dibujen sus ideas y planifiquen la narrativa visual.' },
+    { icon: 'mdi:file-chart-outline', title: 'Banco de Rúbricas Editables', description: 'Copia y pega nuestros criterios de evaluación en tus planificaciones. ¡Ahorra horas de trabajo!' },
+    { icon: 'mdi:certificate', title: 'Certificado Digital', description: 'Insignia de "Docente Audiovisual" al completar el curso, ideal para tu CV profesional.' },
+];
+---
+<section class="py-16 md:py-24 bg-orange-50" id="bonus">
+    <div class="container mx-auto px-6 max-w-6xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-orange-700">
+            🎁 Bonus Exclusivos
+        </h2>
+        <p class="text-center text-xl mb-12 text-gray-600">
+            Si te inscribes **hoy**, recibirás acceso inmediato a:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {bonuses.map((bonus) => (
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-2xl transition duration-300 border-b-4 border-indigo-500">
+                    <Icon name={bonus.icon} class="w-12 h-12 text-indigo-600 mx-auto mb-4" />
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">{bonus.title}</h3>
+                    <p class="text-gray-600">{bonus.description}</p>
+                </div>
+            ))}
+        </div>
+    </div>
+</section>
