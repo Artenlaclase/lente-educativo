@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const faqs = [
+    { 
+        question: '¿Necesito una cámara profesional?', 
+        answer: 'No. Todo el curso está diseñado para realizarse con un Smartphone (Android o iPhone) de gama media. Las técnicas se enfocan en optimizar las herramientas que ya tienes.' 
+    },
+    { 
+        question: '¿Cuánto tiempo dura el taller?', 
+        answer: 'El contenido está diseñado para cubrir 16 horas pedagógicas de trabajo, pero es asincrónico: avanzas a tu propio ritmo. El acceso es de por vida.' 
+    },
+    { 
+        question: 'Soy muy malo con la tecnología, ¿podré hacerlo?', 
+        answer: '¡Sí! Explicamos desde cero. Nuestra metodología es "Kit de Guerrilla": si sabes enviar un WhatsApp, puedes hacer cine escolar con nuestra metodología paso a paso.' 
+    },
+    { 
+        question: '¿Para quién es este taller?', 
+        answer: 'Es para docentes de todas las áreas (Historia, Ciencias, Lenguaje, Matemáticas, Artes), sin necesidad de experiencia técnica, que buscan innovar y fomentar la creatividad y colaboración en sus estudiantes.' 
+    },
+];
+---
+<section class="py-16 md:py-24 bg-gray-100" id="faq">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center mb-12 text-indigo-700">
+            Preguntas Frecuentes
+        </h2>
+        
+        <div class="space-y-4">
+            {faqs.map((faq) => (
+                <details class="group bg-white p-5 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer font-semibold text-lg text-gray-800">
+                        {faq.question}
+                        <Icon name="mdi:chevron-down" class="w-6 h-6 transform transition-transform duration-300 group-open:rotate-180 text-orange-500" />
+                    </summary>
+                    <p class="mt-4 text-gray-600 border-t pt-4">{faq.answer}</p>
+                </details>
+            ))}
+        </div>
+    </div>
+</section>
