@@ -1,0 +1,20 @@
+---
+interface Props {
+    text: string;
+    isLarge?: boolean;
+}
+const { text, isLarge = false } = Astro.props;
+
+// Clases base y condicionales para el tamaño
+const baseClasses = "font-extrabold tracking-wider transform transition duration-300 ease-in-out shadow-lg rounded-full w-full sm:w-auto text-center";
+const sizeClasses = isLarge 
+    ? "px-10 py-5 text-xl bg-orange-500 hover:bg-orange-600 text-white hover:scale-[1.02]" 
+    : "px-8 py-3 text-lg bg-indigo-600 hover:bg-indigo-700 text-white hover:scale-[1.05]";
+---
+
+<a 
+    href="#inscripcion" 
+    class={`${baseClasses} ${sizeClasses} inline-block`}
+>
+    {text}
+</a>
